@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0          http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jfrog.test</groupId>
     <artifactId>multi</artifactId>
-    <version>3.8-SNAPSHOT</version>
+    <version>3.7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Simple Multi Modules Build</name>
 
@@ -27,11 +28,11 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
- <scm>        
- <connection>scm:git:https://github.com/j1an5/testmaven.git</connection>
- <developerConnection>scm:git:https://github.com/j1an5/testmaven.git</developerConnection>
- <tag>multi-3.8</tag>
- </scm>
+
+    <scm>        
+        <connection>scm:git:https://github.com/j1an5/testmaven.git</connection>
+        <developerConnection>scm:git:https://github.com/j1an5/testmaven.git</developerConnection>
+    </scm>
 
     <build>
         <pluginManagement>
