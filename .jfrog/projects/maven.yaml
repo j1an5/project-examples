@@ -1,0 +1,10 @@
+version: 1
+type: maven
+resolver:
+  serverId: jfrog-sd
+  snapshotRepo: maven-public
+  releaseRepo: maven-public
+deployer:
+  serverId: jfrog-sd
+  snapshotRepo: maven-snapshots
+  releaseRepo: maven-staging
