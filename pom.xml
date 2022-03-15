@@ -48,17 +48,29 @@
 
     <scm>        
         <developerConnection>scm:git:https://github.com/j1an5/testmaven.git</developerConnection>
-        <!--
         <connection>scm:git:https://github.com/j1an5/testmaven.git</connection>
+        <url>https://github.com/j1an5/testmaven/tree/master</url>
+        <!--
         <url>http://svn.apache.org/viewvc/maven/release/trunk</url>
         -->
-        <url>scm:git:https://github.com/j1an5/testmaven.git</url>
 
     </scm>
 
     <build>
         <pluginManagement>
             <plugins>
+
+		<!-- Release -->
+                <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-release-plugin</artifactId>
+                  <version>3.0.0-M5</version>
+                  <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                  </configuration>
+                </plugin>
+
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
