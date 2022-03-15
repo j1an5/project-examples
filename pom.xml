@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jfrog.test</groupId>
     <artifactId>multi</artifactId>
-    <version>3.7.13-SNAPSHOT</version>
+    <version>3.7.13</version>
     <packaging>pom</packaging>
     <name>Simple Multi Modules Build</name>
 
@@ -53,7 +53,7 @@
         <url>http://svn.apache.org/viewvc/maven/release/trunk</url>
         -->
 
-      <tag>HEAD</tag>
+      <tag>v3.7.13</tag>
   </scm>
 
     <build>
