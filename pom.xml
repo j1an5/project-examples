@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?> 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0          http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion> 
     <groupId>org.jfrog.test</groupId>
     <artifactId>multi</artifactId>
-    <version>3.7.57-SNAPSHOT</version>
+    <version>3.7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Simple Multi Modules Build</name>
 
@@ -14,8 +14,6 @@
     </modules>
 
     <properties>
-        <scmVersion>1.9.5</scmVersion>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -28,49 +26,11 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
- 
-        <!--scm -->
-        <dependency>
-          <groupId>org.apache.maven.scm</groupId>
-          <artifactId>maven-scm-api</artifactId>
-          <version>1.9.5</version>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.maven.scm</groupId>
-          <artifactId>maven-scm-providers-standard</artifactId>
-          <version>1.9.5</version>
-          <type>pom</type>
-          <scope>runtime</scope>
-        </dependency>
-
     </dependencies>
-
-    <scm>        
-        <developerConnection>scm:git:https://github.com/j1an5/testmaven.git</developerConnection>
-        <connection>scm:git:https://github.com/j1an5/testmaven.git</connection>
-        <url>https://github.com/j1an5/testmaven/tree/master</url>
-        <!--
-        <url>http://svn.apache.org/viewvc/maven/release/trunk</url>
-        -->
-
-      <tag>v3.7.53</tag>
-  </scm>
 
     <build>
         <pluginManagement>
             <plugins>
-
-		<!-- Release -->
-                <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-release-plugin</artifactId>
-                  <version>3.0.0-M5</version>
-                  <configuration>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
-                  </configuration>
-                </plugin>
-
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -110,16 +70,18 @@
         </plugins>
     </build>
 
-<distributionManagement>
-    <repository>
-        <id>central</id>
-        <name>jians-artifactory-b-releases</name>
-        <url>http://192.168.56.100:8082/artifactory/maven-staging</url>
-    </repository>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>jians-artifactory-b-snapshots</name>
-        <url>http://192.168.56.100:8082/artifactory/maven-snapshots</url>
-    </snapshotRepository>
-</distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>rt-releases</name>
+            <url>http://localhost:38082/artifactory/maven-virtual</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>rt-snapshots</name>
+            <url>http://localhost:38082/artifactory/maven-virtual</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+
 </project>

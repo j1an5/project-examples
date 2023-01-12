@@ -1,4 +1,5 @@
 package artifactory.test;
+
 /**
  * Hello world!
  */

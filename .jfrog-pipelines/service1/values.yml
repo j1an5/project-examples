@@ -1,4 +1,0 @@
-gitProvider: JFrog
-artifactory: artifactory
-repoPath: j1an5/testmaven
-deployerRepo: maven-local

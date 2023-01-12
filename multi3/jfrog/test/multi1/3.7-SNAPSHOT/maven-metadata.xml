@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.jfrog.test</groupId>
+  <artifactId>multi1</artifactId>
+  <version>3.7-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20221130.072419</timestamp>
+      <buildNumber>74</buildNumber>
+    </snapshot>
+    <lastUpdated>20221130072554</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>3.7-20221130.072419-74</value>
+        <updated>20221130072419</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>3.7-20221130.072419-74</value>
+        <updated>20221130072419</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>tests</classifier>
+        <extension>jar</extension>
+        <value>3.7-20221130.072419-74</value>
+        <updated>20221130072419</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>3.7-20221130.072419-74</value>
+        <updated>20221130072419</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
