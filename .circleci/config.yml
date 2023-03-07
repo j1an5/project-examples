@@ -63,7 +63,7 @@ jobs:
           command: docker pull nginx:latest
       - run:
           name: docker scan
-          command: jf docker scan nginx:latest --format=table
+          command: export NO_COLOR=true && jf docker scan nginx:latest --format=table
       - run:
           name: docker scan json
           command: jf audit --use-wrapper
