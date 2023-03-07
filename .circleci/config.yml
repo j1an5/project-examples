@@ -36,12 +36,13 @@ jobs:
       image: ubuntu-2204:2022.04.2
     steps:
       # run docker
+      - checkout
       - run:
           name: Docker
           command: docker version
-      - run:
-          name: docker build
-          command: docker load -i abc.tar 
+      #- run:
+      #    name: docker build
+      #    command: docker load -i abc.tar 
       - run:
           name: install cli
           command: wget -qO - https://releases.jfrog.io/artifactory/jfrog-gpg-public/jfrog_public_gpg.key | sudo apt-key add - \
