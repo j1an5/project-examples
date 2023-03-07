@@ -54,11 +54,7 @@ jobs:
           command: sudo apt update && sudo apt install -y jfrog-cli-v2-jf;
       - run:
           name: cli config
-          command: jf config add jfrog-test \
-           --artifactory-url=http://1.117.196.4:8082/artifactory/ \
-           --password='Password1*' \
-           --user=admin \
-           --xray-url=http://1.117.196.4:8082/xray/
+          command: jf config add jfrog-test --artifactory-url=http://1.117.196.4:8082/artifactory/ --password='Password1*' --user=admin --xray-url=http://1.117.196.4:8082/xray/
       - run:
           name: cli test
           command: jf c s
