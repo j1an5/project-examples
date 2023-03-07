@@ -44,11 +44,14 @@ jobs:
       #    name: docker build
       #    command: docker load -i abc.tar 
       - run:
-          name: install cli
-          command: wget -qO - https://releases.jfrog.io/artifactory/jfrog-gpg-public/jfrog_public_gpg.key | sudo apt-key add - \
-           && echo "deb https://releases.jfrog.io/artifactory/jfrog-debs xenial contrib" | sudo tee -a /etc/apt/sources.list; \
-           && apt update; \
-           && apt install -y jfrog-cli-v2-jf;
+          name: install cli wget
+          command: wget -qO - https://releases.jfrog.io/artifactory/jfrog-gpg-public/jfrog_public_gpg.key | sudo apt-key add -
+      - run:
+          name: install cli list
+          command: echo "deb https://releases.jfrog.io/artifactory/jfrog-debs xenial contrib" | sudo tee -a /etc/apt/sources.list; 
+      - run:
+          name: install cli update
+          command: apt update && apt install -y jfrog-cli-v2-jf;
       - run:
           name: cli config
           command: jf config add jfrog-test \
