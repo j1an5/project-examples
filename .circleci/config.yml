@@ -66,7 +66,7 @@ jobs:
           command: jf docker scan nginx:latest --format=table
       - run:
           name: docker scan json
-          command: jf audit --user-warpper
+          command: jf audit --use-wrapper
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
