@@ -39,7 +39,7 @@ jobs:
       - checkout
       - run:
           name: Docker
-          command: mvn version
+          command: docker version
       #- run:
       #    name: docker build
       #    command: docker load -i abc.tar 
