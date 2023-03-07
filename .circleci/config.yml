@@ -11,10 +11,10 @@ jobs:
     # You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # Be sure to update the Docker image tag below to openjdk version of your application.
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
-    #docker:
-    #  - image: cimg/openjdk:11.0
-    machine:
-      image: ubuntu-2204:2022.04.2
+    docker:
+      - image: cimg/openjdk:11.0
+    #machine:
+    #  image: ubuntu-2204:2022.04.2
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -41,12 +41,28 @@ jobs:
           command: docker version
       - run:
           name: docker build
-          command: ls 
+          command: docker load -i abc.tar 
+      - run:
+          name: install cli
+          command: wget -qO - https://releases.jfrog.io/artifactory/jfrog-gpg-public/jfrog_public_gpg.key | sudo apt-key add - \
+           && echo "deb https://releases.jfrog.io/artifactory/jfrog-debs xenial contrib" | sudo tee -a /etc/apt/sources.list; \
+           && apt update; \
+           && apt install -y jfrog-cli-v2-jf;
+      - run:
+          name: cli config
+          command: jf config add jfrog-test \
+           --artifactory-url=http://1.117.196.4:8082/artifactory/ \
+           --password='Password1*' \
+           --user=admin \
+           --xray-url=http://1.117.196.4:8082/xray/
+      - run:
+          name: cli test
+          command: jf c s
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - build-and-test
-    #  - docker-build
+    #  - build-and-test
+      - docker-build
