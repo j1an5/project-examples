@@ -51,7 +51,8 @@ jobs:
           command: echo "deb https://releases.jfrog.io/artifactory/jfrog-debs xenial contrib" | sudo tee -a /etc/apt/sources.list; 
       - run:
           name: install cli update
-          command: sudo apt update && sudo apt install -y jfrog-cli-v2-jf=2.11.0 zip unzip gzip p7zip-full;
+          #command: sudo apt update && sudo apt install -y jfrog-cli-v2-jf=2.11.0 zip unzip gzip p7zip-full;
+          command: sudo apt update && sudo apt install -y jfrog-cli-v2-jf
       - run:
           name: cli config
           #command: jf config add jfrog-test --artifactory-url=https://demo.jfrogchina.com/artifactory/ --password='Jfr0gchina!' --user=sunjian --xray-url=https://demo.jfrogchina.com/xray/
@@ -64,7 +65,8 @@ jobs:
           command: docker pull nginx:latest
       - run:
           name: docker scan
-          command: export NO_COLOR=true && jf docker scan nginx:latest --format=table
+          #command: export NO_COLOR=true && jf docker scan nginx:latest --format=table
+          command: f docker scan nginx:latest --format=simple-json
       - run:
           name: docker scan json
           command: jf audit --use-wrapper
