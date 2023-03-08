@@ -54,7 +54,8 @@ jobs:
           command: sudo apt update && sudo apt install -y jfrog-cli-v2-jf zip unzip gzip p7zip-full;
       - run:
           name: cli config
-          command: jf config add jfrog-test --artifactory-url=https://demo.jfrogchina.com/artifactory/ --password='Jfr0gchina!' --user=sunjian --xray-url=https://demo.jfrogchina.com/xray/
+          #command: jf config add jfrog-test --artifactory-url=https://demo.jfrogchina.com/artifactory/ --password='Jfr0gchina!' --user=sunjian --xray-url=https://demo.jfrogchina.com/xray/
+          command: jf config add jfrog-test --url=https://demo.jfrogchina.com/ --password='Jfr0gchina!' --user=sunjian
       - run:
           name: cli test
           command: jf rt ping
