@@ -58,7 +58,7 @@ jobs:
           command: jf config add jfrog-test --url=https://demo.jfrogchina.com/ --password='Jfr0gchina!' --user=sunjian
       - run:
           name: cli test
-          command: jf version
+          command: jf -v
       - run:
           name: docker pull
           command: docker pull nginx:latest
